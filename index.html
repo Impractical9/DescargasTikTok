@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargador de Tik Tok</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-tiktok"></i>Descargador de TikTok</h1>
+            <p class="subtitle">Descarga videos y audios de tik tok sin marca de agua</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="urlInput" placeholder="Pega la url del vídeo de Tiktok aquí...">
+                    <button id="fetchBtn" class="btn-primary">
+                        <i class="fas fa-download"></i> Obtener videos
+                    </button>
+                </div>
+                <p class="help-text">Ejemplo: https://www.tiktok.com/@usuario/video/1234567890123456789</p>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Obteniendo información del vídeo...</p>
+            </div>
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="video-preview">
+                    <video id="videoPlayer" controls poster="" style="max-width:300px; display: none;">
+                        Tu navegador no soporta este elemento de video.
+                    </video>
+                    <img src="" alt="Miniatura" id="thumbnail" style="max-width: 300px; display: none;">
+                    <div class="video-info" id="videoInfo"></div>
+                </div>
+
+                <div class="download-options">
+                    <h3>Opciones de descarga: </h3>
+                    <div class="buttons">
+                        <button id="downloadVideoBtn" class="btn-sucess">
+                            <i class="fas fa-video"></i> Descargar video
+                        </button>
+                        <button id="downloadAudioBtn" class="btn-success">
+                            <i class="fas fa-video"></i> Descargar Audio (MP3)
+                        </button>
+                        <button id="downloadThumbnailBtn" class="brn-success">
+                            <i class="fas fa-image"></i>Descargar Miniatura
+                        </button>
+                    </div>
+                    <div class="quality-options" id="qualityOptions" style="display: none;">
+                        <h4>Calidad disponible:</h4>
+                        <div id="qualityButtons"></div>
+                    </div>
+                </div>
+                
+                <div class="video-details" id="videoDetails"></div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> ¿Como Usar?</h3>
+                <ol>
+                    <li>Abre la app de TikTok y copia el enlace del video que deseas descargar </li>
+                    <li>Pega el enlace en el campo de arriba</li>
+                    <li>Haz click en obtener Video</li>
+                    <li>Selecciona si solo quieres descargar el vdieo, solo el audio o la miniatura</li>
+                    <li>¡Listo, el archivo se descargará automáticamente</li>
+                </ol>
+            </div>
+        </main>
+
+        <footer>
+            <p>Este servicio es solo para contenido propio o con el permiso del autor.</p>
+            <p class="disclaimer">
+                <i class="fas fa-exclamation-triangle"></i> Respetamos todos los derechos de autor. Solo descarga contenido que tengas permiso para usar.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
