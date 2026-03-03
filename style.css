@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 100%;
-    min-width: 800px;
+    max-width: 1200px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -234,27 +234,78 @@ footer {
     gap: 8px;
 }
 
-/* responsive */
 
-@media (max-width: 760px) {
-    .container {
-        padding: 20px;
+
+/* Para movil gradient horizontal */
+@media (max-width: 767px) {
+    body {
+        background: linear-gradient(180deg, #000000, #25f4ee, #fe2c55);
+
     }
+
+    .container {
+        padding: 15px; /*menos padding en movil*/
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;/*mas pequeño*/
+    }
+
+    .subtitle {
+        font-size: 1rem;
     }
 
     .input-group {
         flex-direction: column;
     }
-    
+
+    .btn-primary {
+        width: 100%; /* boton de obtener video ocupa el ancho*/
+    }
+
+    .result-section {
+        padding: 15px; /*reducir el padding interior*/
+    }
+
     .buttons {
         flex-direction: column;
         align-items: center;
+        gap: 8px; /* espacio entre botones*/
     }
 
     .btn-success {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* ajustar la miniatura y video*/
+    .video-preview video,
+    .video-preview img {
+        max-width: 100%; /* que no se salgan*/
+        height: auto;
+    }
+
+    /*instrucciones*/
+    .instructions {
+        padding: 15px;
+    }
+
+    .instructions ol{
+        margin-left: 15px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Para desktop - mantener la diagonal*/
+@media (min-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #000000, #25f4ee, #fe2c55);
     }
 }

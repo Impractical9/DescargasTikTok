@@ -476,8 +476,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
     
     // Botón de ejemplo
-    const exampleBtn = document.createElement('button');
-    exampleBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Cargar Ejemplo';
+    //const exampleBtn = document.createElement('button');
+    //exampleBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Cargar Ejemplo';
     exampleBtn.className = 'btn-success';
     exampleBtn.style.marginLeft = '10px';
     exampleBtn.onclick = () => window.downloader.testExample();
