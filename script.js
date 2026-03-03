@@ -118,7 +118,7 @@ class TikTokDownloader {
                 const apiUrl = `${apiConfig.url}?url=${encodeURIComponent(tiktokUrl)}&hd=1`;
                 
                 // Usar proxy CORS si es necesario
-                const proxyUrl = 'https://api.allorigins.win/get?url=';
+                const proxyUrl = 'https://corsproxy.io/?';
                 const fullUrl = proxyUrl + encodeURIComponent(apiUrl);
                 
                 response = await fetch(fullUrl);
