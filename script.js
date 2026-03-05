@@ -18,7 +18,7 @@ class TikTokDownloader {
                 name: 'tikmate',
                 url: 'https://tikmate.app/api/lookup',
                 method: 'POST',
-                active: true
+                active: false
             },
             {
                 name: 'tiktokdl',
@@ -76,6 +76,10 @@ class TikTokDownloader {
             this.showError('Por favor, ingresa una URL válida de TikTok');
             return;
         }
+
+        //solucion compartir desde navegador tiktok web
+        //eliminar parametros luego del ?
+        const cleanUrl = url.split('?')[0];
         
         this.showLoading(true);
         this.hideError();
@@ -89,7 +93,7 @@ class TikTokDownloader {
             console.log(`Intentando con API: ${api.name}`);
             
             try {
-                const data = await this.tryApi(api, url);
+                const data = await this.tryApi(api, cleanUrl);
                 if (data && data.videoUrl) {
                     this.currentVideoData = data;
                     this.displayVideoInfo(data);
@@ -477,11 +481,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Botón de ejemplo
     //const exampleBtn = document.createElement('button');
-    //exampleBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Cargar Ejemplo';
+    /*exampleBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Cargar Ejemplo';
     exampleBtn.className = 'btn-success';
     exampleBtn.style.marginLeft = '10px';
     exampleBtn.onclick = () => window.downloader.testExample();
     
     const inputGroup = document.querySelector('.input-group');
-    inputGroup.appendChild(exampleBtn);
+    inputGroup.appendChild(exampleBtn); */
 });
